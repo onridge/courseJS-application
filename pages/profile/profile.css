@@ -1,0 +1,35 @@
+.containerAvatar {
+    display: flex;
+    margin-top: 100px;
+    margin-left: 100px;
+    width: 100%;
+    max-width: 400px;
+}
+
+#imageAvatar {
+    width: 50%;
+    height: auto;
+}
+
+
+
+.profileBtn {
+    background-color: #2482ff;
+    color: #ffffff;
+    font-size: 20px;
+    padding: 14px 20px;
+    border: none;
+    cursor: pointer;
+    opacity: 0.9;
+    height: 50px;
+    width: 70%;
+    border-radius: 10px;
+    margin-left: 100px;
+    margin-top: 70px;
+}
+
+.Btn-right {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+}

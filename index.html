@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>неInstagram</title>
+    <script src="https://kit.fontawesome.com/ece415b7a2.js"></script>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+<header>
+    <div id="header">
+        <i class="fas fa-camera-retro fa-2x icon logo" ></i>
+        <span id="sitename">неINSTAGRAM</span>
+        <div class="header-right">
+            <button onclick="openModal()" style="width:auto;"> <i class="fas fa-sign-in-alt"></i> Sign Up</button>
+            <div id="id01" class="modal">
+                <span onclick="cancel()" class="close" title="Close Modal">&times;</span>
+                <form class="modal-content">
+                    <div class="container">
+                        <h1>Sign Up</h1>
+                        <p>Please fill in this form to create an account.</p>
+                        <hr>
+                        <div>
+                            <div class="label">
+                                <label><b>Email</b></label>
+                            </div>
+                            <input type="text" class="login-signin" placeholder="Enter Email" name="email" required>
+                        </div>
+                        <div>
+                            <div class="label">
+                                <label><b>Password</b></label>
+                            </div>
+                            <input type="password" class="password-signin" placeholder="Enter Password" name="psw" required>
+                        </div>
+                        <div>
+                            <div class="label">
+                                <label><b>Repeat Password</b></label>
+                            </div>
+                            <input type="password" class="password-signin" placeholder="Repeat Password" name="psw-repeat" required>
+                        </div>
+                        <label>
+                            <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
+                        </label>
+
+                        <div class="clearfix">
+                            <button type="button" onclick="cancel()" class="cancelbtn">Cancel</button>
+                            <button type="submit" class="signupbtn">Sign Up</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div id="feedHeader">
+        <div id="secondHeader">
+            <i class="fas fa-camera-retro fa-2x icon logo"></i>
+            <div id="search">
+                <input type="text" placeholder="Search" name="search2">
+                <button id="searchBtn" type="submit"><i class="fa fa-search"></i></button>
+            </div>
+            <div id="headerRight">
+                <div class="button">
+                    <div class="headerBtn">
+                        <button id="profile"><i class="fas fa-user"></i></button>
+                    </div>
+                    <div class="headerBtn">
+                        <button id="settings"><i class="fas fa-cog"></i></button>
+                    </div>
+                    <div class="headerBtn">
+                        <button id="logOut"><i class="fas fa-door-open"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+</header>
+<div id="content"></div>
+<footer>
+    <div class="footer"
+        <span> <i class="far fa-registered"></i> By onridge </span>
+    </div>
+</footer>
+<script src="./signin.js"></script>
+<script src="./routing.js"></script>
+</body>
+</html>

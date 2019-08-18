@@ -1,0 +1,39 @@
+.bg {
+height: 800px;
+}
+
+.login-text, .password-text {
+    width: 93%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    display: inline-block;
+    border: none;
+    background: #f1f1f1;
+}
+
+.login-text, .password-text {
+    background-color: #ddd;
+    outline: none;
+}
+
+.container1 {
+    padding: 26px;
+    position: relative;
+}
+
+.text-block {
+    position: absolute;
+    top: 20%;
+    left: 37%;
+    width: 400px;
+    height: 325px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+#loginBtn {
+    width: 100%;
+}
+

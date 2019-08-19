@@ -15,13 +15,12 @@ function doRequest(data) {
         resp => resp.json()
     ).then(
         json =>{
-//            if (json.token){
+           if (json.token){
                 localStorage.setItem('token', json.token);
                 mainHeader.style.display = 'none';
                 feedHeader.style.display = 'block';
                 window.location.href = router;
-
-//            }
+            }
         }
 
     ).catch(

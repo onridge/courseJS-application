@@ -1,40 +1,23 @@
 <link rel="stylesheet" href="/pages/feed/feed.css">
 
-<div class="photo">
-    <div class="containerImage">
-        <div class="content">
-            <img class="image" src="https://source.unsplash.com/collection/1270951/1920x1080" style="width: 100%" alt="">
-        </div>
-    </div>
-    <div class="containerImage">
-        <div class="content">
-            <img class="image" src="https://source.unsplash.com/collection/649278/1920x1080" style="width: 100%" alt="">
-        </div>
-    </div>
-    <div class="containerImage">
-        <div class="content">
-            <img class="image" src="https://source.unsplash.com/collection/4994801/1920x1080" style="width: 100%" alt="">
-        </div>
-    </div>
-    <div class="containerImage">
-        <div class="content">
-            <img class="image" src="https://source.unsplash.com/collection/2203755/1920x1080" style="width: 100%" alt="">
-        </div>
-    </div>
-    <div class="containerImage">
-        <div class="content">
-            <img class="image" src="https://source.unsplash.com/collection/181581/1920x1080" style="width: 100%" alt="">
-        </div>
-    </div>
-    <div class="containerImage">
-        <div class="content">
-            <img class="image" src="https://source.unsplash.com/collection/3178572/1920x1080" style="width: 100%" alt="">
-        </div>
-    </div>
+<div class="photo" id="photo">
 </div>
-<div id="myModal" class="modalImage">
-    <span class="close">&times;</span>
-    <img class="modal-contentImage" id="img01">
-    <div id="caption"></div>
+<div id="myModal1" class="modal1">
+    <span class="close1">&times;</span>
+    <div class="comment">
+        <img class="modal-content1" id="img011">
+        <div class="containerComment">
+            <p><span>Gabe:</span></p>
+            <p>Wow</p>
+        </div>
+        <div class="containerComment">
+            <p><span >Pupkin:</span></p>
+            <p>Beautiful picture</p>
+        </div>
+        <div class="containerComment">
+            <textarea id="addComment"></textarea>
+            <button type="submit" id="setComment">Add comment</button>
+        </div>
+    </div>
 </div>
 <script src="./feed.js"></script>

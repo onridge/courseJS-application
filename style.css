@@ -253,3 +253,9 @@ button:hover {
     justify-content: center;
     height: 50px;
 }
+
+.headerBtn{
+    display: flex;
+    justify-content: center;
+    margin-right: 5px;
+}

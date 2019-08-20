@@ -9,7 +9,7 @@
 <body>
 <header>
     <div id="header">
-        <i class="fas fa-camera-retro fa-2x icon logo" ></i>
+        <span><i class="fas fa-camera-retro fa-2x icon logo" ></i></span>
         <span id="sitename">неINSTAGRAM</span>
         <div class="header-right">
             <button onclick="openModal()" style="width:auto;"> <i class="fas fa-sign-in-alt"></i> Sign Up</button>
@@ -24,7 +24,7 @@
                             <div class="label">
                                 <label><b>Email</b></label>
                             </div>
-                            <input type="text" class="login-signin" placeholder="Enter Email" name="email" required>
+                            <input type="text" class="login-signin" id="email-registered" placeholder="Enter Email" name="email" required>
                         </div>
                         <div>
                             <div class="label">
@@ -44,7 +44,7 @@
 
                         <div class="clearfix">
                             <button type="button" onclick="cancel()" class="cancelbtn">Cancel</button>
-                            <button type="submit" class="signupbtn">Sign Up</button>
+                            <button type="submit" id="registerBtn" class="signupbtn">Sign Up</button>
                         </div>
                     </div>
                 </form>
@@ -53,7 +53,7 @@
     </div>
     <div id="feedHeader">
         <div id="secondHeader">
-            <i class="fas fa-camera-retro fa-2x icon logo"></i>
+            <span id="logoFeed"><i class="fas fa-camera-retro fa-2x icon logo" ></i></span>
             <div id="search">
                 <input type="text" placeholder="Search" name="search2">
                 <button id="searchBtn" type="submit"><i class="fa fa-search"></i></button>

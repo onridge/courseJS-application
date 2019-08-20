@@ -1,7 +1,6 @@
 const loginBtn = document.getElementById('loginBtn');
 const feedHeader = document.getElementById('feedHeader');
 const mainHeader = document.getElementById('header');
-const router = '#/feed';
 
 
 function doRequest(data) {
@@ -19,10 +18,30 @@ function doRequest(data) {
                 localStorage.setItem('token', json.token);
                 mainHeader.style.display = 'none';
                 feedHeader.style.display = 'block';
-                window.location.href = router;
+                window.location.href = window.location.origin + '#/feed';
+                return fetch('https://intern-staging.herokuapp.com/api/identification',{
+                    method: 'GET',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    }
+                })
             }
         }
 
+    ).then(
+        resp => resp.json()
+
+    ).then( json => {
+        console.log(json);
+        if(json){
+           json.forEach(function (user) {
+               if(user.email === localStorage.getItem('email')){
+                   console.log(user);
+                   localStorage.setItem('parentId', user._id);
+               }
+           })
+        }
+        }
     ).catch(
         resp => alert(resp)
     );

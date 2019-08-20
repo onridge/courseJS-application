@@ -32,6 +32,7 @@ loginBtn.addEventListener('click', function () {
     let email = document.querySelector('#email').value;
     let password = document.querySelector('#password').value;
     let newUser = {email:email, password: password};
+    localStorage.setItem('email', email);
     doRequest(newUser);
 });
 

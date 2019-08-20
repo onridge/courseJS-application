@@ -1,6 +1,7 @@
 let modal = document.getElementById('id01');
 const profileBtn = document.getElementById('profile');
 const router = '#/profile';
+const logOutBtn = document.getElementById('logOut');
 
 profileBtn.addEventListener('click', ()=>{
     window.location.href = router;
@@ -19,3 +20,8 @@ function cancel() {
 function openModal() {
     document.getElementById('id01').style.display='block'
 }
+
+logOutBtn.addEventListener("click", function () {
+    localStorage.clear();
+    window.location.hash = '';
+});

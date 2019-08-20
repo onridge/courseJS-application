@@ -2,6 +2,7 @@ const form = document.forms.namedItem('uploadFile');
 let parent = "5d361abd0d5fce0004063c91";
 let conteiner = document.getElementById('profilePhoto');
 const lastImg = document.getElementById('contentUpload');
+const userName = document.getElementById('usernameConteiner');
 
 function uploadImage(url, method, body, headers) {
     fetch('https://intern-staging.herokuapp.com/api' + url, {
@@ -53,4 +54,11 @@ function getImageParent(token, parentEntityId) {
 
 getImageParent(localStorage.getItem('token'), parent);
 
+function addUsername(email) {
+    let spanUser = document.createElement('span');
+    spanUser.classList.add('username');
+    userName.appendChild(spanUser);
+    spanUser.textContent = email;
+}
 
+addUsername(localStorage.getItem('email'));

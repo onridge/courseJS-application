@@ -55,9 +55,9 @@
     border-radius: 10px;
 }
 
-#username {
+.username {
     font-family: 'Lato', sans-serif;
-    margin-left: 100px;
+    margin-left: 50px;
     font-size: 30px;
 }
 #uploadbtn{

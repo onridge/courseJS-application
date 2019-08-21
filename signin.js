@@ -1,6 +1,7 @@
 const modal = document.getElementById('id01');
 const profileBtn = document.getElementById('profile');
 const logOutBtn = document.getElementById('logOut');
+const settingsBtn = document.getElementById('settings');
 const feedHeader = document.getElementById('feedHeader');
 const mainHeader = document.getElementById('header');
 const logo = document.getElementById('logoFeed');
@@ -41,12 +42,16 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 });
 
+settingsBtn.addEventListener('click',function () {
+    window.location.href = window.location.origin + '#/anotherpage';
+});
+
 function cancel() {
-    document.getElementById('id01').style.display='none';
+    modal.style.display='none';
 }
 
 function openModal() {
-    document.getElementById('id01').style.display='block'
+    modal.style.display='block'
 }
 
 function registered() {

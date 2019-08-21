@@ -48,6 +48,9 @@ const routes = {
         html:'./pages/profile/profile.html',
         src: './pages/profile/profile.js'
     },
+    'anotherpage': {
+        html:'./pages/anotherpage/anotherpage.html',
+    },
 };
 
 const handleRouting = (function(){

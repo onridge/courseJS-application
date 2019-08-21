@@ -11,6 +11,8 @@ export default function () {
     const fieldComment = document.getElementById('addComment');
     const modalImage = document.getElementById('img011');
     const commentDiv = document.getElementById('div-comment');
+    const followersBtn = document.getElementById('followers');
+    const followingBtn = document.getElementById('following');
     let parent = localStorage.getItem('parentId');
     let amountPost = 0;
 
@@ -34,6 +36,14 @@ export default function () {
         let textComment = fieldComment.value;
         let token = localStorage.getItem('token');
         addComment(textComment, token, modalImage.src);
+    });
+
+    followersBtn.addEventListener('click',function () {
+        window.location.href = window.location.origin + '#/anotherpage';
+    });
+
+    followingBtn.addEventListener('click',function () {
+        window.location.href = window.location.origin + '#/anotherpage';
     });
 
     function uploadImage(url, method, body, headers) {

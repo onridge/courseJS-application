@@ -115,3 +115,24 @@
     font-family: "Roboto Medium", sans-serif;
     resize: none;
 }
+
+#setComment {
+    background-color: #000000;
+    color: #ffffff;
+    font-size: 20px;
+    padding: 14px 20px;
+    border: none;
+    cursor: pointer;
+    opacity: 0.9;
+    height: 50px;
+    width: 50%;
+    border-radius: 10px;
+}
+
+#setComment:hover,
+#setComment:focus {
+    color: #ffffff;
+    background-color: rgba(36, 130, 255, 1);
+    text-decoration: none;
+    cursor: pointer;
+}

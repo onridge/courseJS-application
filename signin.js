@@ -33,8 +33,10 @@ registerBtn.addEventListener('click', function (){
     registered()
 });
 
-document.addEventListener('load', function () {
+document.addEventListener('DOMContentLoaded', function () {
         if (localStorage.getItem('token')) {
+            feedHeader.style.display = 'block';
+            mainHeader.style.display = 'none';
             window.location.href = window.location.origin + '#/feed';
         }
 });

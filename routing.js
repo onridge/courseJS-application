@@ -38,7 +38,7 @@ const render = (function(){
 const routes = {
     '': {
         html: './pages/login/login.html',
-        src: './pages/login/login.js'
+        src: './pages/login/login.js',
     },
     'feed': {
         html:'./pages/feed/feed.html',

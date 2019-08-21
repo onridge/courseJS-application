@@ -1,13 +1,38 @@
 const form = document.forms.namedItem('uploadFile');
-let parent = localStorage.getItem('parentId');
-let conteiner = document.getElementById('profilePhoto');
+const conteiner = document.getElementById('profilePhoto');
 const lastImg = document.getElementById('contentUpload');
 const userName = document.getElementById('usernameConteiner');
-let modal = document.getElementById("myModal1");
+const modal = document.getElementById("myModal1");
 const uploadBtn = document.getElementById('uploadBtn');
-let amountPost = 0;
 const postsBtn = document.getElementById('posts');
+const addCommentbtn = document.querySelector('#setComment');
+const fieldComment = document.getElementById('addComment');
+const modalImage = document.getElementById('img011');
+const commentDiv = document.getElementById('div-comment');
+let parent = localStorage.getItem('parentId');
+let amountPost = 0;
 
+uploadBtn.addEventListener('input', function (event) {
+    if (uploadBtn.files) {
+        let formD = new FormData(form);
+        formD.append('parentEntityId', parent);
+        uploadImage('/file', 'POST', formD,{'token': localStorage.getItem('token')});
+        event.preventDefault();
+    }
+});
+
+conteiner.addEventListener('click', function (event) {
+    if(event.target.nodeName === 'IMG' && event.target.id !== 'uploadImage'){
+        wrapper(event.target.src);
+        loadComment(localStorage.getItem('token'),event.target.src)
+    }
+});
+
+addCommentbtn.addEventListener('click', function(event){
+    let textComment = fieldComment.value;
+    let token = localStorage.getItem('token');
+    addComment(textComment, token, modalImage.src);
+});
 
 function uploadImage(url, method, body, headers) {
     fetch('https://intern-staging.herokuapp.com/api' + url, {
@@ -33,15 +58,6 @@ function uploadImage(url, method, body, headers) {
         }
     );
 }
-
-uploadBtn.addEventListener('input', function (event) {
-    if (uploadBtn.files) {
-        let formD = new FormData(form);
-        formD.append('parentEntityId', parent);
-        uploadImage('/file', 'POST', formD,{'token': localStorage.getItem('token')});
-        event.preventDefault();
-    }
-});
 
 function getImageParent(token, parentEntityId) {
     fetch('https://intern-staging.herokuapp.com/api/file/' + parentEntityId, {
@@ -84,13 +100,6 @@ function addUsername(email) {
 
 addUsername(localStorage.getItem('email'));
 
-conteiner.addEventListener('click', function (event) {
-    if(event.target.nodeName === 'IMG' && event.target.id !== 'uploadImage'){
-        wrapper(event.target.src);
-        loadComment(localStorage.getItem('token'),event.target.src)
-    }
-});
-
 function wrapper(src) {
     let modalImg = document.getElementById("img011");
 
@@ -103,18 +112,6 @@ function wrapper(src) {
         commentDiv.innerHTML = '';
     };
 }
-
-const addCommentbtn = document.querySelector('#setComment');
-const fieldComment = document.getElementById('addComment');
-const modalImage = document.getElementById('img011');
-const commentDiv = document.getElementById('div-comment');
-const textAreaDiv = document.getElementById('fieldOfComment');
-
-addCommentbtn.addEventListener('click', function(event){
-    let textComment = fieldComment.value;
-    let token = localStorage.getItem('token');
-    addComment(textComment, token, modalImage.src);
-});
 
 function addComment(data, token, urlImage) {
     fetch('https://intern-staging.herokuapp.com/api/file/', {

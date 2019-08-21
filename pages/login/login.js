@@ -2,6 +2,13 @@ const loginBtn = document.getElementById('loginBtn');
 const feedHeader = document.getElementById('feedHeader');
 const mainHeader = document.getElementById('header');
 
+loginBtn.addEventListener('click', function () {
+    let email = document.querySelector('#email').value;
+    let password = document.querySelector('#password').value;
+    let newUser = {email:email, password: password};
+    localStorage.setItem('email', email);
+    doRequest(newUser);
+});
 
 function doRequest(data) {
     fetch('https://intern-staging.herokuapp.com/api/identification/sign_in',{
@@ -43,15 +50,6 @@ function doRequest(data) {
         }
         }
     ).catch(
-        resp => alert(resp)
+        resp => alert('Incorrect E-mail or password')
     );
 }
-
-loginBtn.addEventListener('click', function () {
-    let email = document.querySelector('#email').value;
-    let password = document.querySelector('#password').value;
-    let newUser = {email:email, password: password};
-    localStorage.setItem('email', email);
-    doRequest(newUser);
-});
-

@@ -17,6 +17,7 @@ body {
     font-size: 50px;
     color: #000000;
 }
+
 #header button {
     color: black;
     text-align: center;
@@ -33,7 +34,6 @@ body {
     font-weight: bold;
     color: #ffffff;
 }
-
 
 #header button.active {
     background-color: #ffffff;
@@ -171,7 +171,6 @@ hr {
     padding: 5px 10px;
 }
 
-
 #secondHeader button {
     color: black;
     text-align: center;
@@ -190,7 +189,6 @@ hr {
 #headerRight{
     display: inline;
 }
-
 
 #secondHeader button {
     background-color: #ffffff;

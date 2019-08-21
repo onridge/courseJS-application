@@ -6,6 +6,7 @@ const mainHeader = document.getElementById('header');
 const logo = document.getElementById('logoFeed');
 const emailReg = document.getElementById('email-registered');
 const registerBtn = document.getElementById('registerBtn');
+const API = 'https://intern-staging.herokuapp.com/api';
 
 profileBtn.addEventListener('click', ()=>{
     window.location.href = window.location.origin + '#/profile';
@@ -17,14 +18,6 @@ window.onclick = function(event) {
     }
 };
 
-function cancel() {
-    document.getElementById('id01').style.display='none';
-}
-
-function openModal() {
-    document.getElementById('id01').style.display='block'
-}
-
 logOutBtn.addEventListener("click", function () {
     localStorage.clear();
     window.location.href = window.location.origin;
@@ -34,11 +27,25 @@ logOutBtn.addEventListener("click", function () {
 
 logo.addEventListener('click',function () {
     window.location.href = window.location.origin + '#/feed';
-
 });
 
-const API = 'https://intern-staging.herokuapp.com/api';
+registerBtn.addEventListener('click', function (){
+    registered()
+});
 
+document.addEventListener('load', function () {
+        if (localStorage.getItem('token')) {
+            window.location.href = window.location.origin + '#/feed';
+        }
+});
+
+function cancel() {
+    document.getElementById('id01').style.display='none';
+}
+
+function openModal() {
+    document.getElementById('id01').style.display='block'
+}
 
 function registered() {
     fetch(API + '/identification', {
@@ -92,7 +99,3 @@ resp => resp.json()
         }
     })
 }
-
-registerBtn.addEventListener('click', function (){
-    registered()
-});

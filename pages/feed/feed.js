@@ -1,5 +1,9 @@
-let modal = document.getElementById("myModal1");
-let conteiner = document.getElementById('photo');
+const modal = document.getElementById("myModal1");
+const conteiner = document.getElementById('photo');
+const addCommentbtn = document.querySelector('#setComment');
+const fieldComment = document.getElementById('addComment');
+const modalImage = document.getElementById('img011');
+const commentDiv = document.getElementById('div-comment');
 
 conteiner.addEventListener('click', function (event) {
     if(event.target.nodeName === 'IMG'){
@@ -8,14 +12,18 @@ conteiner.addEventListener('click', function (event) {
     }
 });
 
+addCommentbtn.addEventListener('click', function(event){
+    let textComment = fieldComment.value;
+    let token = localStorage.getItem('token');
+    addComment(textComment, token, modalImage.src);
+});
+
 function wrapper(src) {
     let modalImg = document.getElementById("img011");
-
         modal.style.display = "block";
         modalImg.src = src;
 
     let span = document.getElementsByClassName("close1")[0];
-
     span.onclick = function() {
         modal.style.display = "none";
         commentDiv.innerHTML = '';
@@ -49,18 +57,6 @@ function getImage(token) {
 }
 
 getImage(localStorage.getItem('token'));
-
-const addCommentbtn = document.querySelector('#setComment');
-const fieldComment = document.getElementById('addComment');
-const modalImage = document.getElementById('img011');
-const commentDiv = document.getElementById('div-comment');
-const textAreaDiv = document.getElementById('fieldOfComment');
-
-addCommentbtn.addEventListener('click', function(event){
-    let textComment = fieldComment.value;
-    let token = localStorage.getItem('token');
-    addComment(textComment, token, modalImage.src);
-});
 
 function addComment(data, token, urlImage) {
     fetch('https://intern-staging.herokuapp.com/api/file/', {
